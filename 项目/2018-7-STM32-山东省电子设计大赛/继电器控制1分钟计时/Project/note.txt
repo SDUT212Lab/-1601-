@@ -1,0 +1,14 @@
+1.而enum是枚举类型：如果一个变量你需要几种可能存在的值，那么就可以被定义成为枚举类型。
+enum中的值都是同一种数据类型，比如你定义一个enum ，表示星期，星期有7天，你可以这样
+定义enum week {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};sun自动的就等于2
+2.枚举型结构体
+枚举元素只能是标识符，而不能是数值常量或字符常量。例如以下的定义是错误的：
+IS_GPIO_SPEED(SPEED) (((SPEED) == GPIO_Speed_10MHz) ||
+((SPEED) == GPIO_Speed_2MHz) || \
+                              ((SPEED) == GPIO_Speed_50MHz))
+宏定义，当出现IS_GPIO_SPEED(SPEED) 时，将其替换成
+(((SPEED) == GPIO_Speed_10MHz) || ((SPEED) == GPIO_Speed_2MHz) || \
+((SPEED) == GPIO_Speed_50MHz))，
+中间有一个“\”斜杠，那是连接两行的连接符，不用在意。
+替换后，判断SPEED的值为10MHZ,还是2MHZ，或者是50MHZ，如果有一个条件为真，
+那么IS_GPIO_SPEED(SPEED)
